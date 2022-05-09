@@ -1,4 +1,4 @@
-package io.github.pawel12master.conferenceapp.model;
+package io.github.pawel12master.conferenceapp;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,18 +22,11 @@ public class Conference {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "conference")
     private List<Lecture> lectures = new ArrayList<>();
 
-
-
     public Conference() {
     }
 
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Date getConference_start() {

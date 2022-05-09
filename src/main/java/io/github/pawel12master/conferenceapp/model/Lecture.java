@@ -1,4 +1,4 @@
-package io.github.pawel12master.conferenceapp.model;
+package io.github.pawel12master.conferenceapp;
 
 import javax.persistence.*;
 import java.util.ArrayList;

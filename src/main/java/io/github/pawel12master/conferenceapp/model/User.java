@@ -1,4 +1,6 @@
-package io.github.pawel12master.conferenceapp.model;
+package io.github.pawel12master.conferenceapp;
+
+import io.github.pawel12master.conferenceapp.Lecture;
 
 import javax.persistence.*;
 
