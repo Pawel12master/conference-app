@@ -22,18 +22,15 @@ public class Conference {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "conference")
     private List<Lecture> lectures = new ArrayList<>();
 
-
-
     public Conference() {
     }
 
+   public void setId(int id) {
+        this.id = id;
+    }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Date getConference_start() {
