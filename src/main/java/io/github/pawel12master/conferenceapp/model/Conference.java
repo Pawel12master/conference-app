@@ -1,4 +1,4 @@
-package io.github.pawel12master.conferenceapp;
+package io.github.pawel12master.conferenceapp.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -23,6 +23,10 @@ public class Conference {
     private List<Lecture> lectures = new ArrayList<>();
 
     public Conference() {
+    }
+
+   public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {

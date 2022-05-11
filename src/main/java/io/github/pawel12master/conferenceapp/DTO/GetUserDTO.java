@@ -1,34 +1,28 @@
-package io.github.pawel12master.conferenceapp.model;
+package io.github.pawel12master.conferenceapp.DTO;
 
-import javax.persistence.*;
+import io.github.pawel12master.conferenceapp.model.Lecture;
 
-@Entity
-@Table(name = "user")
-public class User {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+public class GetUserDTO {
     private int id;
     private String  email;
     private String  login;
     private String  password;
+    private GetLectureDTO getLectureDTO;
 
-    public User(String email, String login, String password) {
+    public GetUserDTO(int id, String email, String login, String password, GetLectureDTO getLectureDTO) {
+        this.id = id;
         this.email = email;
         this.login = login;
         this.password = password;
-    }
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Lecture lecture;
-
-    public User() {
-
+        this.getLectureDTO = getLectureDTO;
     }
 
-    User(String email, String login, String password, Lecture lecture) {
-        this.email = email;
-        this.login = login;
-        this.password = password;
-        this.lecture = lecture;
+    public GetLectureDTO getGetLectureDTO() {
+        return getLectureDTO;
+    }
+
+    public void setGetLectureDTO(GetLectureDTO getLectureDTO) {
+        this.getLectureDTO = getLectureDTO;
     }
 
     public int getId() {
@@ -61,13 +55,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-     public Lecture getLecture() {
-        return lecture;
-    }
-
-    public void setLecture(Lecture lecture) {
-        this.lecture = lecture;
     }
 }
